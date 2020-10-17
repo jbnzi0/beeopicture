@@ -28,30 +28,46 @@ def save(images, filename):
     with open(filename, "w") as file:
         json.dump(images, file)
 
-def get_correct_url(driver):
-    with open("oreme.txt", "r") as file:
+def get(filename):
+    with open(filename, "r") as file:
         images = json.load(file)
-        j=1
-        for i in images:
-            print("URL n°" +str(j))
-            driver.get(images[i])
-            images[i] = driver.current_url
-            j+=1
-            
+    return images
+
+def get_correct_url(driver):
+    images = get("oreme.txt")
+    j=1
+    for i in images:
+        print("URL n°" +str(j))
+        driver.get(images[i])
+        images[i] = driver.current_url
+        j+=1  
     save(images, "oreme_with_correct_url.txt")
             
-def download_and_store(images):
+def download_and_store():
+    images = get("oreme_with_correct_url.txt")
+    errors = {}
+    i=0
     for img in images:
-        urllib.request.urlretrieve(images[img], img + ".jpg")
-
+        try:
+            filepath = os.path.join('/Users/golfdivine/Desktop/Computer Science/Engineering School/2020-2021/Cap Projet/BeeOImage/Dataset/Oreme2', img + ".jpg")
+            urllib.request.urlretrieve(images[img], filepath)
+            print(img + " downloaded")
+        except urllib.error.HTTPError:
+            print("Error on file " + img)
+            errors[i]=img
+            i+=1
+            continue
+    save(errors, "http_errors.txt")
+    
 def main():
-    driver = webdriver.Chrome('chromedriver')
-    get_correct_url(driver)
+    download_and_store()
+    #driver = webdriver.Chrome('chromedriver')
     #url = "https://data.oreme.org/palyno/palyno_gallery#photo_taxon_list"
     #driver.get(url)
     #scrap(driver)
-    time.sleep(5)
-    driver.quit()
+    
+    #time.sleep(5)
+    #driver.quit()
 
 
 
