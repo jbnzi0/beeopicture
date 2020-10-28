@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>PollenDisplayer</title>
+    <style>
+        * {
+          box-sizing: border-box;
+        }
+        
+        /* Create two unequal columns that floats next to each other */
+        .column {
+          float: left;
+          padding: 10px;
+          height: 600px; /* Should be removed. Only for demonstration */
+        }
+        
+        .left {
+          width: 75%;
+        }
+        
+        .right {
+          padding-top: 5%;
+          width: 25%;
+          align-items: center;
+          text-align: center;
+        }
+        
+        /* Clear floats after the columns */
+        .row:after {
+          content: "";
+          display: table;
+          clear: both;
+        }
+    </style>
+</head>
+<body style="background-color:#000;">
+    
+  
+
+    <div class="row">
+        <div class="column left">
+            <img src="pollen_test.png" alt="Girl in a jacket" style="width:963px;height:624px;">
+        </div>
+        <div class="column right">
+            <form action="/action_page.php">
+                <label style="color:#FFFFFF" for="pollen_quantity">Pollen Quantity</label><br><br>
+                <input  type="text" id="pollen_quantity" name="pollen_quantity"><br><br>
+                <label style="color:#FFFFFF" for="zoom_level">Zoom Level</label><br><br>
+                <input type="text" id="zoom_level" name="zoom_level"><br><br>
+                <input type="submit" value="Draw"> <br><br>
+                <input type="reset" value="Clear"> <br><br>
+                <input type="button" value="Save"> <br><br>
+            </form>   
+            <br><br>   
+            <br><br>
+            <form >
+                <label style="color:#FFFFFF" for="nb_of_imgs">Number of Images</label><br><br>
+                <input  type="text" id="nb_of_imgs" name="nb_of_imgs"><br><br>
+                <input type="button" value="Generate Batch"> 
+                <br><br>
+                
+                <br><br>
+                <input type="button" value="Generate Rotated Images"> 
+            </form>  
+        </div>
+    </div>
+</body>
+</html>
