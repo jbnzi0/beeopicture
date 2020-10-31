@@ -12,4 +12,11 @@
 *.out
 
 # Dependency directories (remove the comment below to include it)
-Electron_js_app/node_modules/
+recompositron/node_modules/
+Dataset/Kaggle/
+Dataset/Oreme/
+Dataset/POLEN23E/
+
+.vscode/
+.DS_Store
+
