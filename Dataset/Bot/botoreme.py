@@ -21,7 +21,7 @@ def scrap(driver):
         except:
             print("No desc")
     print('Ended at ' + time.strftime('%X %x %Z'))
-    save(images, "oreme.txt")
+    save(images, "files/oreme.txt")
     #download_and_store(images)
 
 def save(images, filename):
@@ -34,17 +34,17 @@ def get(filename):
     return images
 
 def get_correct_url(driver):
-    images = get("oreme.txt")
+    images = get("files/oreme.txt")
     j=1
     for i in images:
         print("URL n°" +str(j))
         driver.get(images[i])
         images[i] = driver.current_url
         j+=1  
-    save(images, "oreme_with_correct_url.txt")
+    save(images, "files/oreme_with_correct_url.txt")
             
 def download_and_store():
-    images = get("oreme_with_correct_url.txt")
+    images = get("files/oreme_with_correct_url.txt")
     errors = {}
     i=0
     for img in images:

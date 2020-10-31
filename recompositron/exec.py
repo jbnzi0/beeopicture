@@ -43,8 +43,7 @@ def generateCanva(n):
         
 
 
-def add_noise():
-    #dddd
+
 def get_random_string(length):
     letters = string.ascii_lowercase
     rand = ''.join(random.choice(letters) for i in range(length))
