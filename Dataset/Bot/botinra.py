@@ -31,8 +31,11 @@ def download_and_store():
 
 #save(errors, "http_errors.txt") 
 
-if __name__ == "__main__":
-    #get_names()
+def main():
     print("-----------------------")
     print("Starting crawling of INRA DB")
     download_and_store()
+    print("Crawling done")
+    
+if __name__ == "__main__":
+    main()
