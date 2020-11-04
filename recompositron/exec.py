@@ -50,6 +50,7 @@ def get_random_string(length):
     return rand
 
 augment()
+
 #generateCanva(7)
     # random selection of pollen in /augmented
     # create gray image 961x626 
