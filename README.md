@@ -1,1 +1,2 @@
-# Pollen detection model 
+# Beeopicture
+Final year project
