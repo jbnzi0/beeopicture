@@ -19,8 +19,8 @@ def main(argv):
     plt.figure(figsize=(18,24))
     r=4
     c=2
-    #for filename in os.listdir("canvas/"):
-    path = os.path.join('canvas/', "pollen_colorized.jpg")
+    #for filename in os.listdir("canvas/"): pollen_colorized.jpg
+    path = os.path.join('canvas/', "test.png")
     print(path)
     noise(path, "gaussian", r, c, 1)
     noise(path, "localvar", r, c, 2)
