@@ -1,32 +1,19 @@
 # Beeopicture
 
-Final year project which consists of developing a pollen detection model using object detection algorithms in Deep Learning. The work was scinded in the three following parts :
+Final year project which consists of developing a pollen detection model using object detection algorithms in Deep Learning. The idea behind the project was to solve an issue from Beeodiversity, a social company that uses pollen collected by bees to identify the biodiversity at certain places. The goal was to automate/accelerate the process of pollen analysis in the lab. We essentially worked on the Data Science part of the project. The work was scinded in the three following parts :
  - Scraping of different data sources to build the dataset
  - Training and inference testing in Colab notebooks
  - Web Application to test the inference and view the results
 
-## Installation
+## Dataset
 
-Use the package manager [pip](https://pip.pypa.io/en/stable/) to install foobar.
+The bots used to scrape datas are in scraping/bots folder. The dataset from INRA and OREME are in the corresponding zip archive. The dataset was then build using the [Recompositron](https://github.com/AzeoGarage/ShareAI-Beeodiversity-SmartBeeHive/tree/master/src/PollenDetector/Tools/Recompositron) software built by AZEO, the project initiator. The datasets were stored on Azure Data Lake.
 
-```bash
-pip install foobar
-```
+## Data Science
 
-## Usage
+We have been able to test and compare different object detection algorithms (Faster-RCNN, YOLOv5, SSD and EfficientDet-V2) using Google Colaboratory. We trained at different scales depending on Colab's limits.
 
-```python
-import foobar
-
-foobar.pluralize('word') # returns 'words'
-foobar.pluralize('goose') # returns 'geese'
-foobar.singularize('phenomena') # returns 'phenomenon'
-```
-
-## Contributing
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
-
-Please make sure to update tests as appropriate.
-
-## License
-[MIT](https://choosealicense.com/licenses/mit/)
+ - SSD -> Pascal VOC, X mAP
+ - YOLOv5 -> COCO, X mAP
+ - EfficientDet-v2 -> COCO, X mAP
+ - Faster-RCNN -> Pascal VOC, X mAP
