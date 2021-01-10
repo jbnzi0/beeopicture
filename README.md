@@ -1,6 +1,9 @@
 # Beeopicture
 
-Foobar is a Python library for dealing with word pluralization.
+Final year project which consists of developing a pollen detection model using object detection algorithms in Deep Learning. The work was scinded in the three following parts :
+ - Scraping of different data sources to build the dataset
+ - Training and inference testing in Colab notebooks
+ - Web Application to test the inference and view the results
 
 ## Installation
 
