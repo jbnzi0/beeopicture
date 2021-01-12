@@ -12,8 +12,3 @@ The bots used to scrape datas are in scraping/bots folder. The dataset from INRA
 ## Data Science
 
 We have been able to test and compare different object detection algorithms (Faster-RCNN, YOLOv5, SSD and EfficientDet-V2) using Google Colaboratory. We trained at different scales depending on Colab's limits.
-
- - SSD -> Pascal VOC, X mAP
- - YOLOv5 -> COCO, X mAP
- - EfficientDet-v2 -> COCO, X mAP
- - Faster-RCNN -> Pascal VOC, X mAP
